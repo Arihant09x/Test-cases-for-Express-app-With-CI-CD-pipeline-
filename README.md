@@ -124,12 +124,32 @@ model User {
 - **Isolation**: Each test runs with fresh mock data
 - **Assertions**: Tests verify both HTTP responses and database calls
 
-## 🔄 Development Workflow
+## 🔄 Development Workflow & CI/CD
+
+### Why CI/CD Pipeline is Written
+
+The CI/CD pipeline (`.github/workflow/test.yml`) is specifically designed to:
+
+1. **Automate Testing**: Ensure all tests pass on every code change, maintaining the testing-first approach
+2. **Prevent Regression**: Catch breaking changes before they reach production
+3. **Validate Build Process**: Ensure the TypeScript compilation and build process works correctly
+4. **Quality Assurance**: Run the comprehensive test suite automatically on pull requests
+5. **Continuous Integration**: Allow safe collaboration by validating all changes through automated testing
+
+### Pipeline Features
+
+- **Automated test execution** on every push/PR
+- **Node.js environment** setup with proper dependencies
+- **Test coverage** validation
+- **Build verification** to ensure production readiness
+
+### Development Workflow
 
 1. **Write tests first** in `src/test/index.test.ts`
 2. **Implement features** to make tests pass
-3. **Run tests**: `npm test`
-4. **Build**: `npm run build`
+3. **Run tests locally**: `npm test`
+4. **Push to GitHub**: CI/CD pipeline automatically runs all tests
+5. **Build**: `npm run build` (only after CI passes)
 
 ## 📝 Notes
 
