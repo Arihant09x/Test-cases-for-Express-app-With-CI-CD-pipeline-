@@ -12,8 +12,7 @@ describe("Testing Express", () => {
       password: "123456789",
     });
 
-    vi.spyOn(prismaClient.user, "create");
-    
+    // vi.spyOn(prismaClient.user, "create");
 
     const res = await request(app).post("/signup").send({
       name: "John",
