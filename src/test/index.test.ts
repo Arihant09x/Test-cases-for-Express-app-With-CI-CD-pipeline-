@@ -8,7 +8,7 @@ describe("Testing Express", () => {
   it("should return User Signed Up", async () => {
     prismaClient.user.create.mockResolvedValue({
       id: 1,
-      name: "John",
+      name: "alices",
       password: "123456789",
     });
 
