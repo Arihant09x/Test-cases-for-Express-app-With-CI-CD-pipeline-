@@ -5,12 +5,12 @@ on:
     branches:
       - main
 
-job:
+jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -19,7 +19,7 @@ job:
           node-version: 20
 
       - name: Install dependencies
-        run: npm Install && npx prisma generate
+        run: npm install && npx prisma generate
 
-      - name: Run Test
+      - name: Run tests
         run: npm run test
