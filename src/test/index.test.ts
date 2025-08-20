@@ -37,7 +37,7 @@ describe("Testing Express", () => {
     expect(prismaClient.user.create).not.toHaveBeenCalledWith({
       data: {
         name: 12,
-        password: 1212,
+        password: "1212",
       },
     });
     expect(res.statusCode).toBe(400);
